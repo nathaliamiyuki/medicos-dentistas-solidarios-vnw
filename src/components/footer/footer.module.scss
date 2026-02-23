@@ -1,0 +1,152 @@
+@use "../../globalStyle.scss" as *;
+
+.footer {
+  background-color: $cor-fundo-footer;
+  color: $cor-branco-geral;
+  padding-top: 3rem; 
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: $fonte-principal;
+
+  .footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 3rem 2rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3rem;
+
+    @include mobile {
+      gap: 1.5rem 1rem;
+      padding: 0 1.5rem 2rem 1.5rem;
+      align-items: flex-start;
+    }
+  }
+
+  .footer__col {
+    flex: 1 1 200px;
+
+    @include mobile {
+      flex: 0 0 calc(50% - 0.5rem);
+      max-width: calc(50% - 0.5rem);
+      min-width: 0;
+      overflow-wrap: break-word;
+    }
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: $cor-branco-geral;
+    }
+  }
+
+  .socialCol {
+    @include mobile {
+      flex: 0 0 100%; 
+      max-width: 100%;
+      margin-top: 0; 
+    }
+  }
+
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+
+    img {
+      width: 32px;
+      height: auto;
+    }
+
+    .logoFooter {
+      font-size: 1rem;
+      font-weight: 700;
+      color: $cor-branco-geral;
+      line-height: 1.2;
+      font-family: $fonte-principal;
+    }
+  }
+
+  .brandText {
+    color: $cor-branco-geral;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    max-width: 300px;
+  }
+
+  .footer__links {
+    list-style: none;
+
+    li {
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      svg {
+        min-width: 18px;
+      }
+
+      a,
+      span {
+        color: $cor-branco-geral;
+        text-decoration: none;
+        font-size: 0.85rem;
+        word-break: break-word;
+      }
+    }
+  }
+
+  .socialList {
+    list-style: none;
+
+    li {
+      margin-bottom: 0.8rem;
+
+      a,
+      span {
+        color: $cor-branco-geral;
+        text-decoration: none;
+        font-size: 0.85rem;
+        display: block;
+      }
+    }
+  }
+
+  .footer__bottom {
+    background: #050505;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+    .footer__copyright {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      text-align: center;
+
+      @include mobile {
+        flex-direction: column;
+        margin-bottom: 2rem;
+      }
+
+      @include tablet {
+        margin-right: 0;
+      }
+
+      p {
+        color: #888;
+        font-size: 0.85rem;
+
+        span {
+          color: #888;
+        }
+      }
+    }
+  }
+}

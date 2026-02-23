@@ -1,0 +1,401 @@
+@use "../../globalStyle.scss" as *;
+
+.heroSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 4rem;
+  margin: 0 auto;
+  font-family: $fonte-principal;
+
+  @include mobile {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+    overflow-x: hidden;
+  }
+
+  @include tablet {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.2rem;
+    overflow-x: hidden;
+  }
+}
+
+.textArea {
+  flex: 1;
+
+  padding-left: 8rem;
+  max-width: 70ch;
+
+  @include mobile {
+    padding-left: 0;
+  }
+
+  @include tablet {
+    padding-left: 0;
+  }
+
+  @include desktop {
+    padding-left: 0;
+  }
+
+  h1 {
+    max-width: 12ch;
+    word-break: break-word;
+    font-size: 4.2rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    @include mobile {
+      font-size: 2.5rem;
+      max-width: 100%;
+    }
+
+    @include tablet {
+      margin: 0 auto 2rem auto;
+      max-width: 46ch;
+    }
+  }
+
+  p {
+    font-size: 1.575rem;
+    color: $cor-cinza-texto;
+    margin-bottom: 2rem;
+    max-width: 40ch;
+    line-height: 1.45;
+    padding-left: 0.7rem;
+
+    @include mobile {
+      max-width: 100%;
+    }
+
+    @include tablet {
+      margin: 0 auto 2rem auto;
+      max-width: 46ch;      
+    }      
+  }
+}
+
+.badgeBox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: $cor-cinza-medio;
+  padding: 0.35rem 0.8rem;
+  border-radius: 50px;
+  width: fit-content;
+  margin-bottom: 1.5rem;
+}
+
+.badgeBox img {
+  width: 22px;
+  height: 22px;
+  display: block;
+  object-fit: contain;
+}
+
+.badge {
+  font-size: 1.23rem;
+  font-weight: 600;
+  color: $cor-preto;
+  line-height: 1;
+
+  @include mobile {
+    text-align: center;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+    width: 100%;
+  }
+
+   @include tablet {
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+    width: 100%;
+  }
+}
+
+.primaryBtn,
+.secondaryBtn {
+  @extend .btn-base;
+  font-size: 1.425rem;
+  padding: 0.9rem 1.6rem;
+  transition: 0.25s ease;
+  white-space: nowrap;
+  width: fit-content;
+  font-family: $fonte-principal;
+  border-radius: 0.7rem;
+
+  @include mobile {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+.primaryBtn {
+  background: $cor-verde-principal;
+  color: #fff;
+  border: none;
+
+  &:hover {
+    background: $cor-verde-claro;
+    color: $cor-cinza-texto;
+    transform: translateY(-4px);
+  }
+
+  &:active {
+    background: $cor-verde-claro;
+    color: $cor-verde-principal;
+  }
+
+  @include mobile {
+    font-size: 1.188rem;
+  }
+}
+
+.secondaryBtn {
+  background: transparent;
+  border: 2px solid $cor-verde-principal;
+  color: $cor-verde-principal;
+
+  &:hover {
+    background: transparent;
+    color: $cor-verde-principal;
+    transform: translateY(-4px);
+  }
+
+  &:active {
+    background: $cor-verde-principal;
+    color: $cor-branco-geral;
+    border-color: $cor-verde-principal;
+  }
+
+  @include mobile {
+    font-size: 1.188rem;
+  }
+}
+
+.imageArea {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    max-width: 38.5rem;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  @include mobile {
+    display: none;
+  }
+
+  @include tablet {
+    display: none;
+  }
+
+  @include desktop {
+    display: flex;
+
+    img {
+      width: 38vw;
+      max-width: 420px;
+    }
+  }
+
+  @include large {
+    img {
+      width: 32vw;
+      max-width: 500px;
+      margin-top: 2rem;
+    }
+  }
+}
+
+.missao {
+  background-color: $cor-verde-escuro;
+  color: $cor-branco-geral;
+  padding: 4rem 6rem;
+  font-family: $fonte-principal;
+
+  @include mobile {
+    padding: 3rem 1.5rem;
+  }
+
+  h2 {
+    font-size: 3.75rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+
+    @include mobile {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+  }
+
+  &_text {
+    font-size: 1.4375rem;
+    margin-bottom: 3rem;
+    color: $cor-branco-geral;
+    font-weight: 400;    
+
+    @include mobile {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 2rem;     
+    }
+  }
+
+  &_cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 2rem;
+
+    @include mobile {
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+    }
+  }
+
+
+  &_card {
+    border: solid 2px white;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 28rem;
+    height: 18rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 14px;
+    padding: 0 3rem;
+    text-align: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+
+    @include mobile {
+      flex: none;
+      max-width: 19.81rem;
+      height: 12rem;
+    }
+
+    h3 {
+      font-size: 1.875rem;
+      font-weight: 700;
+
+      @include mobile {
+        font-size: 1.5rem;
+      }
+    }
+
+    p {
+      color: $cor-branco-geral;
+      font-size: 1.5rem;
+      font-weight: 400;
+
+      @include mobile {
+        font-size: 0.85rem; 
+        text-align: left;          
+        max-width: 96ch;      
+      }
+    }
+  }
+}
+
+.impacto {
+  background-color: $cor-branco-geral;
+  color: $cor-preto;
+  padding: 4rem 6rem;
+  font-family: $fonte-principal;
+
+  @include mobile {
+    padding: 3rem 1.5rem;
+  }
+
+  h2 {
+    font-size: 3.75rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+
+    @include mobile {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+  }
+
+  &_text {
+    font-size: 1.4375rem;
+    margin-bottom: 3rem;
+    color: $cor-preto;
+    font-weight: 400;
+
+    @include mobile {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 2rem;
+
+    @include mobile {
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+    }
+  }
+
+  &__card {
+    border: solid 2px $cor-preto;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 19.81rem;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 14px;
+    padding: 0 3rem;
+    text-align: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+
+    @include mobile {
+      flex: none;
+      max-width: 19.81rem;
+      height: 15rem;
+    }
+
+    h3 {
+      color: $cor-verde-escuro;
+      font-size: 3.125rem;
+      font-weight: 700;
+    }
+
+    p {
+      color: $cor-preto;
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+  }
+}
